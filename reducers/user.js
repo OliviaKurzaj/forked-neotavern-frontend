@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: {
-    user: {token: null, nickname: null, likedEvents: null, email: null, role: null, id: null},
-    likedArray:[]
+    user: {token: null, nickname: null, likedEvents: null, email: null},
+    //likedArray:[]
   },
 };
 
@@ -20,9 +20,6 @@ export const userSlice = createSlice({
       state.value.user.id = action.payload.id;
       state.value.user.badges = action.payload.badges;
     },
-    likeEvent: (state, action) => {
-      state.value.user.likedArray.push(action.payload)
-    },
     logout: (state) => {
       state.value.user.token = null
       state.value.user.email = null
@@ -31,8 +28,11 @@ export const userSlice = createSlice({
       state.value.user.nickname = null
       state.value.user.id = null
     }
+    // likeEvent: (state, action) => {
+    //   state.value.user.likedArray.push(action.payload)
+    // },
   },
 });
 
-export const { login, logout, likeEvent } = userSlice.actions;
+export const { login, logout } = userSlice.actions;
 export default userSlice.reducer;
