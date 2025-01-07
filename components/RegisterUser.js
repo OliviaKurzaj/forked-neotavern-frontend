@@ -53,10 +53,6 @@ const RegisterUser = ({ navigation }) => {
               nickname: userData?.nickname,
               email: userData?.email,
               likedEvents: userData?.likedEvents,
-              
-              role: userData?.role,
-              id: userData?.id,
-              badges: userData?.badges,
             })
           )
           navigation.navigate("TabNavigator", { screen: "MapScreen" })
